@@ -1,0 +1,25 @@
+.container
+  .row-fluid
+    .span4
+      %h3 Status
+      %table.table.table-bordered.table-striped
+        %tr
+          %td Started
+          %td= @masterd[1]
+        %tr
+          %td Running time
+          %td= @masterd[2]
+        %tr
+          %td Process ids
+          %td= @daemons.map { |d| d[0] }.join("<br />")
+
+      Edit configuration and
+      %br
+      push 'Update and Restart process' button
+
+    .span6
+      %h3 Configuration
+      %form{:method => 'post', :action => "/"}
+        %input{:type => 'hidden', :name => 'process_id', :value => @masterd[0]}
+        %textarea#config{:name => 'config', :rows => @config.count("\n")}= @config
+        %input.btn.btn-primary{:type => 'submit', :value => 'Update and Restart process'}

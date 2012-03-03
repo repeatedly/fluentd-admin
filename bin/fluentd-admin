@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+
+require 'rubygems' unless defined?(gem)
+$LOAD_PATH << File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'fluent/admin/command'

@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %title Fluentd Admin
+    %link{"rel" => "stylesheet", "href" => "/css/bootstrap.min.css", "type" => "text/css"}
+    %style{:type => 'text/css'}
+      \body {padding-top: 70px;}
+      \#config {
+      \  font-family: 'Courier New','Courier', monospace;
+      \  width: 100%;
+      \}
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{:href => '/'} Fluentd Admin
+
+    = yield
